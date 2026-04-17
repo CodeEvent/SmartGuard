@@ -1,0 +1,11 @@
+setup.py
+detectors/__init__.py
+detectors/fake_token_name.py
+detectors/missing_zero_check.py
+detectors/unlimited_mint.py
+detectors/unprotected_critical_function.py
+smartguard.egg-info/PKG-INFO
+smartguard.egg-info/SOURCES.txt
+smartguard.egg-info/dependency_links.txt
+smartguard.egg-info/entry_points.txt
+smartguard.egg-info/top_level.txt
