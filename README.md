@@ -169,7 +169,6 @@ SmartGuard/
 ├── demo.ps1 # Reproducibility script
 ├── setup.py # Plugin registration
 └── README.md
-
 ---
 
 ## ⚙ Requirements
