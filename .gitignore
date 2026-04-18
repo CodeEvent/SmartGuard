@@ -1,13 +1,39 @@
-venv/
-.venv/
+# Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.log
-.env
-.env.*
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Slither/Solidity
+*.json
+!results/json/.gitkeep
+slitherResults/
+crytic-export/
+
+# IDE
 .vscode/
 .idea/
-results/
-*.tmp
+*.swp
+*.swo
+*~
+
+# OS
+.Desktop.ini
+Thumbs.db
+
+# Large files/Datasets (if applicable)
+*.csv
+!datasets/.gitkeep
+
+# Secrets (Never commit these)
+.env
+.env.local
+secrets.json
+*.key
