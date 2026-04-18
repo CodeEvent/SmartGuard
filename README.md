@@ -129,32 +129,19 @@ These results demonstrate reliable detection performance with zero false positiv
 
 
 SmartGuard/
-│
 ├── contracts/
-│ ├── scam/
-│ │ ├── test_mint.sol
-│ │ ├── scam_fake_eth.sol
-│ │ ├── vulnerable_owner.sol
-│ │ └── external/
-│ │ ├── stratos_unlimited.sol
-│ │ └── rugdoc/
-│
-│ └── legit/
-│ └── openzeppelin/
-│
-├── detectors/
-│ ├── unlimited_mint.py
-│ ├── fake_token_name.py
-│ └── unprotected_critical_function.py
-│
-├── results/
-│ ├── baseline/
-│ ├── extended/
-│ └── json/
-│
-├── demo.ps1
-├── setup.py
-└── README.md
+│   ├── scam/                    # 7 fraudulent contract samples
+│   │   ├── test_mint.sol
+│   │   ├── scam_fake_eth.sol
+│   │   └── vulnerable_owner.sol
+│   └── legit/                   # 10 legitimate baseline contracts
+│       └── openzeppelin/
+├── detectors/                   # Core implementations
+│   ├── unlimited_mint.py
+│   ├── fake_token_name.py
+│   └── unprotected_critical_function.py
+├── results/                     # Experimental artifacts
+└── demo.ps1                     # Reproducibility script
 
 
 ---
