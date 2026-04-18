@@ -129,20 +129,46 @@ These results demonstrate reliable detection performance with zero false positiv
 
 
 SmartGuard/
+│
 ├── contracts/
-│   ├── scam/                    # 7 fraudulent contract samples
-│   │   ├── test_mint.sol
-│   │   ├── scam_fake_eth.sol
-│   │   └── vulnerable_owner.sol
-│   └── legit/                   # 10 legitimate baseline contracts
-│       └── openzeppelin/
-├── detectors/                   # Core implementations
-│   ├── unlimited_mint.py
-│   ├── fake_token_name.py
-│   └── unprotected_critical_function.py
-├── results/                     # Experimental artifacts
-└── demo.ps1                     # Reproducibility script
-
+│ ├── scam/ # 7 fraudulent contract samples
+│ │ ├── test_mint.sol
+│ │ ├── scam_fake_eth.sol
+│ │ ├── vulnerable_owner.sol
+│ │ └── external/
+│ │ ├── stratos_unlimited.sol
+│ │ └── rugdoc/
+│ │ ├── beetsfarm_rug.sol
+│ │ ├── evo_honeypot.sol
+│ │ └── patrick_finance_rug.sol
+│ │
+│ └── legit/ # 10 legitimate baseline contracts
+│ └── openzeppelin/
+│ ├── ERC20.sol
+│ ├── Ownable.sol
+│ ├── Pausable.sol
+│ ├── ERC721.sol
+│ ├── Math.sol
+│ ├── AccessControl.sol
+│ ├── Address.sol
+│ ├── Context.sol
+│ ├── ReentrancyGuard.sol
+│ └── SafeERC20.sol
+│
+├── detectors/ # Core detector implementations
+│ ├── init.py
+│ ├── unlimited_mint.py
+│ ├── fake_token_name.py
+│ └── unprotected_critical_function.py
+│
+├── results/ # Experimental artifacts
+│ ├── baseline/
+│ ├── extended/
+│ └── json/
+│
+├── demo.ps1 # Reproducibility script
+├── setup.py # Plugin registration
+└── README.md
 
 ---
 
