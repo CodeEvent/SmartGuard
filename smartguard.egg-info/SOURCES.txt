@@ -1,3 +1,4 @@
+README.md
 setup.py
 detectors/__init__.py
 detectors/fake_token_name.py
