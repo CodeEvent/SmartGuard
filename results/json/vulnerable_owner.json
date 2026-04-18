@@ -1,0 +1,138 @@
+{
+  "success": true,
+  "error": null,
+  "results": {
+    "detectors": [
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "setOwner",
+            "source_mapping": {
+              "start": 180,
+              "length": 80,
+              "filename_relative": "contracts/scam/vulnerable_owner.sol",
+              "filename_absolute": "C:/Users/erman/OneDrive/Documents/smartguard/contracts/scam/vulnerable_owner.sol",
+              "filename_short": "contracts/scam/vulnerable_owner.sol",
+              "is_dependency": false,
+              "lines": [
+                11,
+                12,
+                13
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "VulnerableOwner",
+                "source_mapping": {
+                  "start": 60,
+                  "length": 308,
+                  "filename_relative": "contracts/scam/vulnerable_owner.sol",
+                  "filename_absolute": "C:/Users/erman/OneDrive/Documents/smartguard/contracts/scam/vulnerable_owner.sol",
+                  "filename_short": "contracts/scam/vulnerable_owner.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 0
+                }
+              },
+              "signature": "setOwner(address)"
+            }
+          }
+        ],
+        "description": "Unprotected critical function: VulnerableOwner.setOwner (line 11)",
+        "markdown": "Unprotected critical function: VulnerableOwner.setOwner (line 11)",
+        "first_markdown_element": "contracts/scam/vulnerable_owner.sol#L11-L13",
+        "id": "74cf4fe17d1a19fdf1adaea4ffa1e804aa57154ba2dd63873c5e85b5310471e4",
+        "check": "unprotected-critical-function",
+        "impact": "High",
+        "confidence": "Medium"
+      },
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "withdraw",
+            "source_mapping": {
+              "start": 268,
+              "length": 97,
+              "filename_relative": "contracts/scam/vulnerable_owner.sol",
+              "filename_absolute": "C:/Users/erman/OneDrive/Documents/smartguard/contracts/scam/vulnerable_owner.sol",
+              "filename_short": "contracts/scam/vulnerable_owner.sol",
+              "is_dependency": false,
+              "lines": [
+                15,
+                16,
+                17
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "VulnerableOwner",
+                "source_mapping": {
+                  "start": 60,
+                  "length": 308,
+                  "filename_relative": "contracts/scam/vulnerable_owner.sol",
+                  "filename_absolute": "C:/Users/erman/OneDrive/Documents/smartguard/contracts/scam/vulnerable_owner.sol",
+                  "filename_short": "contracts/scam/vulnerable_owner.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 0
+                }
+              },
+              "signature": "withdraw()"
+            }
+          }
+        ],
+        "description": "Unprotected critical function: VulnerableOwner.withdraw (line 15)",
+        "markdown": "Unprotected critical function: VulnerableOwner.withdraw (line 15)",
+        "first_markdown_element": "contracts/scam/vulnerable_owner.sol#L15-L17",
+        "id": "c3fb520eba56994754e2a205b8695aa563ddc81801a1343631e4e51e44310a21",
+        "check": "unprotected-critical-function",
+        "impact": "High",
+        "confidence": "Medium"
+      }
+    ]
+  }
+}

@@ -1,39 +1,10 @@
-# Python
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
-.Python
 venv/
 env/
-ENV/
-*.egg-info/
-dist/
-build/
-
-# Slither/Solidity
-*.json
-!results/json/.gitkeep
-slitherResults/
-crytic-export/
-
-# IDE
 .vscode/
 .idea/
 *.swp
-*.swo
-*~
-
-# OS
-.Desktop.ini
+.DS_Store
 Thumbs.db
-
-# Large files/Datasets (if applicable)
-*.csv
-!datasets/.gitkeep
-
-# Secrets (Never commit these)
-.env
-.env.local
-secrets.json
-*.key
+*.log

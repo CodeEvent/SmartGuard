@@ -1,0 +1,75 @@
+{
+  "success": true,
+  "error": null,
+  "results": {
+    "detectors": [
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "mint",
+            "source_mapping": {
+              "start": 307,
+              "length": 134,
+              "filename_relative": "contracts/scam/test_mint.sol",
+              "filename_absolute": "C:/Users/erman/OneDrive/Documents/smartguard/contracts/scam/test_mint.sol",
+              "filename_short": "contracts/scam/test_mint.sol",
+              "is_dependency": false,
+              "lines": [
+                17,
+                18,
+                19
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "TestMint",
+                "source_mapping": {
+                  "start": 60,
+                  "length": 384,
+                  "filename_relative": "contracts/scam/test_mint.sol",
+                  "filename_absolute": "C:/Users/erman/OneDrive/Documents/smartguard/contracts/scam/test_mint.sol",
+                  "filename_short": "contracts/scam/test_mint.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 0
+                }
+              },
+              "signature": "mint(address,uint256)"
+            }
+          }
+        ],
+        "description": "Unlimited mint detected in TestMint.mint (line 17) \u251c\u2500 Function: mint \u251c\u2500 Visibility: external \u251c\u2500 Access control: onlyOwner \u2514\u2500 Supply cap: None",
+        "markdown": "Unlimited mint detected in TestMint.mint (line 17) \u251c\u2500 Function: mint \u251c\u2500 Visibility: external \u251c\u2500 Access control: onlyOwner \u2514\u2500 Supply cap: None",
+        "first_markdown_element": "contracts/scam/test_mint.sol#L17-L19",
+        "id": "807e7c7d6c24f8b8e5054f39163becdffe4d19c8473b167f02ec10fc2beb23cf",
+        "check": "unlimited-mint",
+        "impact": "High",
+        "confidence": "Medium"
+      }
+    ]
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "success": true,
+  "error": null,
+  "results": {
+    "detectors": [
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "name",
+            "source_mapping": {
+              "start": 84,
+              "length": 31,
+              "filename_relative": "contracts/scam/scam_fake_eth.sol",
+              "filename_absolute": "C:/Users/erman/OneDrive/Documents/smartguard/contracts/scam/scam_fake_eth.sol",
+              "filename_short": "contracts/scam/scam_fake_eth.sol",
+              "is_dependency": false,
+              "lines": [
+                5
+              ],
+              "starting_column": 5,
+              "ending_column": 36
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "FakeEth",
+                "source_mapping": {
+                  "start": 60,
+                  "length": 161,
+                  "filename_relative": "contracts/scam/scam_fake_eth.sol",
+                  "filename_absolute": "C:/Users/erman/OneDrive/Documents/smartguard/contracts/scam/scam_fake_eth.sol",
+                  "filename_short": "contracts/scam/scam_fake_eth.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 0
+                }
+              }
+            }
+          }
+        ],
+        "description": "Fake token name detected: 'ethereum' impersonating 'eth' in FakeEth (line 5) \u251c\u2500 Contract: FakeEth \u251c\u2500 Variable: name = 'ethereum' \u2514\u2500 Impersonating: eth",
+        "markdown": "Fake token name detected: 'ethereum' impersonating 'eth' in FakeEth (line 5) \u251c\u2500 Contract: FakeEth \u251c\u2500 Variable: name = 'ethereum' \u2514\u2500 Impersonating: eth",
+        "first_markdown_element": "contracts/scam/scam_fake_eth.sol#L5",
+        "id": "0c121dd18dd86b90da9be348f0857f136be52eb7e8f473a96b944fe48675ded9",
+        "check": "fake-token-name",
+        "impact": "Medium",
+        "confidence": "Medium"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "name",
+            "source_mapping": {
+              "start": 84,
+              "length": 31,
+              "filename_relative": "contracts/scam/scam_fake_eth.sol",
+              "filename_absolute": "C:/Users/erman/OneDrive/Documents/smartguard/contracts/scam/scam_fake_eth.sol",
+              "filename_short": "contracts/scam/scam_fake_eth.sol",
+              "is_dependency": false,
+              "lines": [
+                5
+              ],
+              "starting_column": 5,
+              "ending_column": 36
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "FakeEth",
+                "source_mapping": {
+                  "start": 60,
+                  "length": 161,
+                  "filename_relative": "contracts/scam/scam_fake_eth.sol",
+                  "filename_absolute": "C:/Users/erman/OneDrive/Documents/smartguard/contracts/scam/scam_fake_eth.sol",
+                  "filename_short": "contracts/scam/scam_fake_eth.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 0
+                }
+              }
+            }
+          }
+        ],
+        "description": "Fake token name detected: 'ethereum' impersonating 'ethereum' in FakeEth (line 5) \u251c\u2500 Contract: FakeEth \u251c\u2500 Variable: name = 'ethereum' \u2514\u2500 Impersonating: ethereum",
+        "markdown": "Fake token name detected: 'ethereum' impersonating 'ethereum' in FakeEth (line 5) \u251c\u2500 Contract: FakeEth \u251c\u2500 Variable: name = 'ethereum' \u2514\u2500 Impersonating: ethereum",
+        "first_markdown_element": "contracts/scam/scam_fake_eth.sol#L5",
+        "id": "6fa8bcee09eb0a8b79b41a59e4893128571eb343f2c724ac9cc07ed347ca267d",
+        "check": "fake-token-name",
+        "impact": "Medium",
+        "confidence": "Medium"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "symbol",
+            "source_mapping": {
+              "start": 156,
+              "length": 28,
+              "filename_relative": "contracts/scam/scam_fake_eth.sol",
+              "filename_absolute": "C:/Users/erman/OneDrive/Documents/smartguard/contracts/scam/scam_fake_eth.sol",
+              "filename_short": "contracts/scam/scam_fake_eth.sol",
+              "is_dependency": false,
+              "lines": [
+                6
+              ],
+              "starting_column": 5,
+              "ending_column": 33
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "FakeEth",
+                "source_mapping": {
+                  "start": 60,
+                  "length": 161,
+                  "filename_relative": "contracts/scam/scam_fake_eth.sol",
+                  "filename_absolute": "C:/Users/erman/OneDrive/Documents/smartguard/contracts/scam/scam_fake_eth.sol",
+                  "filename_short": "contracts/scam/scam_fake_eth.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 0
+                }
+              }
+            }
+          }
+        ],
+        "description": "Fake token name detected: 'eth' impersonating 'eth' in FakeEth (line 6) \u251c\u2500 Contract: FakeEth \u251c\u2500 Variable: symbol = 'eth' \u2514\u2500 Impersonating: eth",
+        "markdown": "Fake token name detected: 'eth' impersonating 'eth' in FakeEth (line 6) \u251c\u2500 Contract: FakeEth \u251c\u2500 Variable: symbol = 'eth' \u2514\u2500 Impersonating: eth",
+        "first_markdown_element": "contracts/scam/scam_fake_eth.sol#L6",
+        "id": "d9586ea41e070f6523e4726de59388f455492d9ca00066dbe67e8a5505b7331c",
+        "check": "fake-token-name",
+        "impact": "Medium",
+        "confidence": "Medium"
+      }
+    ]
+  }
+}

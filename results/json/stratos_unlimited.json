@@ -1,0 +1,296 @@
+{
+  "success": true,
+  "error": null,
+  "results": {
+    "detectors": [
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "addReward",
+            "source_mapping": {
+              "start": 900,
+              "length": 173,
+              "filename_relative": "contracts/scam/external/stratos_unlimited.sol",
+              "filename_absolute": "C:/Users/erman/OneDrive/Documents/smartguard/contracts/scam/external/stratos_unlimited.sol",
+              "filename_short": "contracts/scam/external/stratos_unlimited.sol",
+              "is_dependency": false,
+              "lines": [
+                28,
+                29,
+                30,
+                31,
+                32
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "StratosPoTReward",
+                "source_mapping": {
+                  "start": 247,
+                  "length": 1470,
+                  "filename_relative": "contracts/scam/external/stratos_unlimited.sol",
+                  "filename_absolute": "C:/Users/erman/OneDrive/Documents/smartguard/contracts/scam/external/stratos_unlimited.sol",
+                  "filename_short": "contracts/scam/external/stratos_unlimited.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    45,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50,
+                    51,
+                    52
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 0
+                }
+              },
+              "signature": "addReward(address,uint256)"
+            }
+          }
+        ],
+        "description": "Unlimited mint detected in StratosPoTReward.addReward (line 28) \u251c\u2500 Function: addReward \u251c\u2500 Visibility: external \u251c\u2500 Access control: None \u2514\u2500 Supply cap: None",
+        "markdown": "Unlimited mint detected in StratosPoTReward.addReward (line 28) \u251c\u2500 Function: addReward \u251c\u2500 Visibility: external \u251c\u2500 Access control: None \u2514\u2500 Supply cap: None",
+        "first_markdown_element": "contracts/scam/external/stratos_unlimited.sol#L28-L32",
+        "id": "07b32c64adb598730b847ff5a2ccdb6b2caddd854ed2f7d8099085bcdcbc9214",
+        "check": "unlimited-mint",
+        "impact": "High",
+        "confidence": "Medium"
+      },
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "setOwner",
+            "source_mapping": {
+              "start": 1461,
+              "length": 141,
+              "filename_relative": "contracts/scam/external/stratos_unlimited.sol",
+              "filename_absolute": "C:/Users/erman/OneDrive/Documents/smartguard/contracts/scam/external/stratos_unlimited.sol",
+              "filename_short": "contracts/scam/external/stratos_unlimited.sol",
+              "is_dependency": false,
+              "lines": [
+                43,
+                44,
+                45,
+                46
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "StratosPoTReward",
+                "source_mapping": {
+                  "start": 247,
+                  "length": 1470,
+                  "filename_relative": "contracts/scam/external/stratos_unlimited.sol",
+                  "filename_absolute": "C:/Users/erman/OneDrive/Documents/smartguard/contracts/scam/external/stratos_unlimited.sol",
+                  "filename_short": "contracts/scam/external/stratos_unlimited.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    45,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50,
+                    51,
+                    52
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 0
+                }
+              },
+              "signature": "setOwner(address)"
+            }
+          }
+        ],
+        "description": "Unprotected critical function: StratosPoTReward.setOwner (line 43)",
+        "markdown": "Unprotected critical function: StratosPoTReward.setOwner (line 43)",
+        "first_markdown_element": "contracts/scam/external/stratos_unlimited.sol#L43-L46",
+        "id": "3bc85d032b9bc6749e68acb1ff6fcec6335b80c2fd14f05431dd3d583e1caf41",
+        "check": "unprotected-critical-function",
+        "impact": "High",
+        "confidence": "Medium"
+      },
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "withdrawReward",
+            "source_mapping": {
+              "start": 1138,
+              "length": 268,
+              "filename_relative": "contracts/scam/external/stratos_unlimited.sol",
+              "filename_absolute": "C:/Users/erman/OneDrive/Documents/smartguard/contracts/scam/external/stratos_unlimited.sol",
+              "filename_short": "contracts/scam/external/stratos_unlimited.sol",
+              "is_dependency": false,
+              "lines": [
+                35,
+                36,
+                37,
+                38,
+                39,
+                40
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "StratosPoTReward",
+                "source_mapping": {
+                  "start": 247,
+                  "length": 1470,
+                  "filename_relative": "contracts/scam/external/stratos_unlimited.sol",
+                  "filename_absolute": "C:/Users/erman/OneDrive/Documents/smartguard/contracts/scam/external/stratos_unlimited.sol",
+                  "filename_short": "contracts/scam/external/stratos_unlimited.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    45,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50,
+                    51,
+                    52
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 0
+                }
+              },
+              "signature": "withdrawReward(uint256)"
+            }
+          }
+        ],
+        "description": "Unprotected critical function: StratosPoTReward.withdrawReward (line 35)",
+        "markdown": "Unprotected critical function: StratosPoTReward.withdrawReward (line 35)",
+        "first_markdown_element": "contracts/scam/external/stratos_unlimited.sol#L35-L40",
+        "id": "f18475eeb4bb290ae178b68f2c317743da33e2c16d496e777bcf2f77f1a12e81",
+        "check": "unprotected-critical-function",
+        "impact": "High",
+        "confidence": "Medium"
+      }
+    ]
+  }
+}

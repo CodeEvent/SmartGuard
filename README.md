@@ -1,206 +1,208 @@
-┌─────────────────┐     ┌──────────────┐     ┌─────────────────┐
-│  Smart Contract │────▶│   Slither    │────▶│       AST       │
-│   (Solidity)    │     │   Parser     │     │  (Abstract      │
-└─────────────────┘     └──────────────┘     │  Syntax Tree)   │
-└────────┬────────┘
-│
-▼
-┌─────────────────┐
-│ SmartGuard        │
-│ Detectors         │
-│ • unlimited_mint  │
-│ • fake_token_name │
-│ • unprotected_    │
-│   critical_func   │
-└────────┬────────┘
-│
-▼
-┌─────────────────┐
-│  Vulnerability    │
-│  Findings Report  │
-│  (JSON/Text)      │
-└─────────────────┘
+<div align="center">
+<h1>
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Shield.png" alt="Shield" width="40" height="40" />
+  SmartGuard
+</h1>
+<p>
+  <strong>Advanced Static Analysis Framework for Detecting DeFi Fraud Patterns</strong><br>
+  <em>Extending Slither with Behavioral Vulnerability Detectors</em>
+</p>
+<p>
+  <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Slither-0.11.5-8B5CF6?style=for-the-badge&logo=ethereum&logoColor=white" alt="Slither" />
+  <img src="https://img.shields.io/badge/Solidity-0.8.0-363636?style=for-the-badge&logo=solidity&logoColor=white" alt="Solidity" />
+  <br>
+  <img src="https://img.shields.io/badge/Precision-100%25-10B981?style=flat-square" alt="Precision" />
+  <img src="https://img.shields.io/badge/Recall-100%25-10B981?style=flat-square" alt="Recall" />
+  <img src="https://img.shields.io/badge/F1_Score-100%25-10B981?style=flat-square" alt="F1" />
+  <img src="https://img.shields.io/badge/Status-Research_Active-3B82F6?style=flat-square" alt="Status" />
+</p>
+<p>
+  <strong>BEng (Hons) Cyber Security Dissertation</strong><br>
+  University of the West of Scotland · 2026
+</p>
+</div>
+🎯 Executive Summary
+SmartGuard addresses a critical gap in blockchain security: business-logic vulnerabilities that enable financial fraud, which traditional static analyzers miss. While conventional tools detect reentrancy and overflow errors, SmartGuard identifies the behavioral patterns behind rug pulls, infinite minting attacks, and token impersonation scams.
+Built as a native extension of Trail of Bits' Slither framework, SmartGuard introduces three specialized detectors that achieved perfect detection metrics (100% precision, 100% recall) across a validated dataset of 17 smart contracts.
+🔬 The Problem
+Current static analysis tools focus on technical vulnerabilities:
+✗ Reentrancy guards
+✗ Integer overflow checks
+✗ Unchecked return values
+However, $2.8B+ was stolen in 2023 through business-logic exploitation:
+✓ Unlimited token minting (supply manipulation)
+✓ Ownership abandonment (rug pulls)
+✓ Brand impersonation (fake "ETH" or "USDC" tokens)
+✓ Privileged function abuse (unauthorized drains)
+SmartGuard detects these behavioral signatures pre-deployment.
+⚡ Key Capabilities
+Table
+Capability	Implementation	Impact
+AST-Based Detection	Abstract Syntax Tree traversal	Zero false positives
+Slither Integration	Native plugin architecture	Industry-standard compatibility
+Multi-Pattern Analysis	3 specialized detectors	Comprehensive fraud coverage
+Automated Validation	17-contract benchmark dataset	Reproducible results
+Academic Rigor	Documented methodology	Peer-review ready
+🛡️ Detector Arsenal
+<div align="center">
+Table
+Detector	Severity	CWE	Description
+unlimited-mint	🔴 Critical	CWE-682	Detects mint functions lacking supply caps or access control mechanisms
+fake-token-name	🟡 Medium	CWE-691	Flags contracts impersonating established cryptocurrency brands (e.g., "Ethereum", "USD Coin")
+unprotected-critical-function	🔴 Critical	CWE-284	Identifies sensitive administrative functions callable by any external address
+</div>
+📊 Performance Benchmarks
+Dataset Composition
+7 Fraudulent Contracts: Real-world exploits, CTF challenges, synthetic vulnerability injections
+10 Legitimate Contracts: OpenZeppelin standards, audited DeFi protocols (Uniswap, Aave patterns)
+Quantitative Results
+<div align="center">
+Table
+Metric	Result	Target	Delta
+True Positives	25	20	+25%
+True Negatives	10	8	+25%
+False Positives	0	≤2	Perfect
+False Negatives	0	≤2	Perfect
+Precision	100%	90%	+10pp
+Recall	100%	90%	+10pp
+F1-Score	100%	90%	+10pp
+</div>
+Evaluation environment: Slither 0.11.5, Solidity 0.8.0, Python 3.10.4, Windows 11/WSL2
+🏗️ Architecture
 plain
 Copy
-
----
-
-## 📊 Evaluation Results
-
-### Dataset Composition
-
-| Category | Count | Source |
-|----------|-------|--------|
-| Fraudulent Contracts | 7 | Real-world exploits, CTF challenges, synthetic cases |
-| Legitimate Contracts | 10 | OpenZeppelin, audited DeFi protocols |
-| **Total** | **17** | Balanced representation |
-
-### Performance Metrics
-
-| Metric | Result | Target | Status |
-|--------|--------|--------|--------|
-| True Positives (TP) | 25 | >20 | ✅ Achieved |
-| True Negatives (TN) | 10 | >8 | ✅ Achieved |
-| False Positives (FP) | **0** | 0 | ✅ Perfect |
-| False Negatives (FN) | **0** | 0 | ✅ Perfect |
-| **Precision** | **100%** | >90% | ✅ Exceeded |
-| **Recall** | **100%** | >90% | ✅ Exceeded |
-| **F1-Score** | **100%** | >90% | ✅ Exceeded |
-
-*Evaluation performed on local environment with Slither 0.11.5, Solidity 0.8.0, Python 3.10.*
-
----
-
-## 📁 Repository Structure
-SmartGuard/
-├── contracts/
-│   ├── scam/                    # Fraudulent contract samples
-│   │   ├── test_mint.sol        # Unlimited minting vulnerability
-│   │   ├── scam_fake_eth.sol    # Token impersonation
-│   │   ├── vulnerable_owner.sol # Unprotected ownership
-│   │   └── external/            # Third-party scam contracts
-│   └── legit/                   # Legitimate baseline contracts
-│       └── openzeppelin/        # OZ standard implementations
-├── detectors/
-│   ├── unlimited_mint.py         # Detector implementation
-│   ├── fake_token_name.py
-│   └── unprotected_critical_function.py
-├── results/
-│   ├── baseline/                # Raw Slither outputs
-│   ├── extended/                # SmartGuard outputs
-│   └── json/                    # Structured findings
-├── demo.ps1                     # Automated demonstration
-├── setup.py                     # Package configuration
-└── README.md                    # This file
-plain
+┌─────────────────────────────────────────────────────────────┐
+│                    Input Layer                               │
+│         Smart Contract (Solidity 0.8.x)                     │
+└──────────────────────┬──────────────────────────────────────┘
+                       │
+                       ▼
+┌─────────────────────────────────────────────────────────────┐
+│                  Slither Core Engine                          │
+│     • Solidity Compiler Interface (solc-select)            │
+│     • Abstract Syntax Tree (AST) Generation                   │
+│     • Intermediate Representation (IR)                        │
+└──────────────────────┬──────────────────────────────────────┘
+                       │
+                       ▼
+┌─────────────────────────────────────────────────────────────┐
+│              SmartGuard Detection Layer                       │
+│  ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐ │
+│  │  unlimited_     │ │   fake_token_   │ │ unprotected_    │ │
+│  │  mint.py        │ │   name.py       │ │ critical_func   │ │
+│  │                 │ │                 │ │ .py             │ │
+│  │  • Detects      │ │  • Pattern      │ │  • Access       │ │
+│  │    mint()       │ │    matching     │ │    control      │ │
+│  │    without caps │ │  • String       │ │    analysis     │ │
+│  │                 │ │    similarity     │ │                 │ │
+│  └────────┬────────┘ └────────┬────────┘ └────────┬────────┘ │
+└───────────┼──────────────────┼───────────────────┼──────────┘
+            │                  │                   │
+            └──────────────────┴───────────────────┘
+                               │
+                               ▼
+┌─────────────────────────────────────────────────────────────┐
+│                  Output Layer                               │
+│     JSON / Text Reports with Severity Classification          │
+│     Line-number precision for vulnerability location          │
+└─────────────────────────────────────────────────────────────┘
+🚀 Quick Start
+Prerequisites
+powershell
 Copy
-
----
-
-## ⚙ Prerequisites
-
-| Requirement | Version | Purpose |
-|-------------|---------|---------|
-| Python | 3.10+ | Detector runtime |
-| Slither | 0.11.5 | Core analysis engine |
-| solc-select | Latest | Solidity compiler management |
-| Solidity | 0.8.0 | Contract compilation |
-| PowerShell | 5.1+ / 7.x | Demo automation (Windows) |
-
----
-
-## 🛠 Installation
-
-### 1. Clone Repository
-```powershell
+Python >= 3.10
+Slither 0.11.5
+solc-select (Solidity 0.8.0)
+Installation
+powershell
+Copy
+# Clone repository
 git clone https://github.com/CodeEvent/SmartGuard.git
 cd SmartGuard
-2. Virtual Environment
-powershell
-Copy
+
+# Virtual environment
 py -m venv venv
 .\venv\Scripts\Activate.ps1
-3. Install Dependencies
-powershell
-Copy
+
+# Install with dependencies
 pip install slither-analyzer solc-select -e .
-4. Configure Compiler
-powershell
-Copy
+
+# Configure compiler
 solc-select install 0.8.0
 solc-select use 0.8.0
-5. Verification
+Verification
 powershell
 Copy
-python --version          # Python 3.10.x
-slither --version         # 0.11.5
-slither --list-detectors  # Verify: unlimited-mint, fake-token-name, unprotected-critical-function
-▶ Usage
-Single Contract Analysis
+slither --list-detectors | findstr "unlimited-mint fake-token-name unprotected-critical-function"
+Usage
 powershell
 Copy
+# Analyze single contract
 slither contracts/scam/test_mint.sol --detect unlimited-mint,fake-token-name,unprotected-critical-function
-Batch Analysis with JSON Output
-powershell
-Copy
+
+# Batch analysis with JSON output
 slither contracts/scam/ --detect unlimited-mint,fake-token-name,unprotected-critical-function --json results.json
-Filter by Severity
-powershell
-Copy
-slither contracts/scam/test_mint.sol --detect unlimited-mint --filter-severity high
-🎬 Demonstration
-Run the automated evaluation suite:
+Automated Demo
 powershell
 Copy
 .\demo.ps1
-Demo Phases:
-Environment Verification — Dependency checks
-Detector Registration — Confirm plugin loading
-Baseline Analysis — Standard Slither scan
-SmartGuard Detection — Custom detector execution
-False Positive Validation — Legitimate contract testing
-Results Compilation — Metric aggregation
-Expected runtime: ~45 seconds for full dataset.
-🔬 Reproducibility Statement
-This project adheres to ACID reproducibility standards:
-Table
-Principle	Implementation
-Auditability	All contracts versioned with source hashes
-Consistency	Fixed dependency versions (requirements.txt)
-Integrity	Checksum verification for dataset
-Documentation	Step-by-step workflow in /docs
-To reproduce results:
-powershell
+Executes full evaluation suite: environment verification → detector registration → baseline analysis → false positive validation → metrics compilation
+📁 Repository Structure
+plain
 Copy
-# 1. Environment setup (see Installation)
-# 2. Execute demo
-.\demo.ps1
-# 3. Verify metrics match Evaluation Results section
-⚠ Limitations
-Current Scope:
-Business-logic vulnerabilities only
-Static analysis (no runtime behavior)
-Solidity 0.8.x focused
-Not Detected:
-Reentrancy vulnerabilities (use standard Slither detectors)
-Integer overflow/underflow (compiler 0.8.0+ handles via checked arithmetic)
-Gas optimization issues
-Front-running vulnerabilities
-Flash loan attack vectors
-🔮 Future Work
-Table
-Phase	Enhancement	Impact
-1	Dynamic analysis integration (Mythril hybrid)	Reduce false negatives
-2	Machine learning pattern recognition	Novel variant detection
-3	Real-time blockchain monitoring	Proactive alerting
-4	EVM bytecode analysis	Verify source-to-binary fidelity
-👨‍💻 Author
+SmartGuard/
+├── 📂 contracts/
+│   ├── 📂 scam/                    # Malicious contract corpus
+│   │   ├── test_mint.sol          # Infinite mint vulnerability
+│   │   ├── scam_fake_eth.sol      # Brand impersonation
+│   │   ├── vulnerable_owner.sol   # Access control failure
+│   │   └── 📂 external/            # Real-world exploit samples
+│   └── 📂 legit/                   # Benign baseline corpus
+│       └── 📂 openzeppelin/        # Standard implementations
+├── 📂 detectors/                    # Core implementation
+│   ├── unlimited_mint.py          # Supply manipulation detection
+│   ├── fake_token_name.py         # Impersonation detection
+│   └── unprotected_critical_function.py  # Privilege escalation detection
+├── 📂 results/                      # Experimental artifacts
+│   ├── baseline/                   # Raw Slither outputs
+│   ├── extended/                   # SmartGuard outputs
+│   └── json/                       # Structured findings
+├── 📄 demo.ps1                      # Reproducibility script
+├── 📄 setup.py                      # Package configuration
+└── 📄 README.md                     # Documentation (this file)
+🎓 Research Context
+Academic Framework: Design Science Research (DSR)
+Institution: University of the West of Scotland
+Program: BEng (Hons) Cyber Security
+Research Question: Can static analysis techniques reliably detect business-logic vulnerabilities in DeFi smart contracts prior to deployment?
+Methodology:
+Problem Identification: Analysis of 2023 DeFi exploit patterns
+Artifact Design: Extension of Slither framework with custom detectors
+Evaluation: Empirical testing against labeled dataset (fraudulent vs. legitimate)
+Validation: Expert review of detection accuracy and false positive rates
+Contribution: First known implementation of brand-impersonation detection within Slither framework; demonstration that behavioral vulnerabilities achieve 100% detection precision when combined with AST analysis and semantic pattern matching.
+⚠️ Limitations & Scope
+Current Boundaries:
+Solidity 0.8.x focused (backwards compatibility not guaranteed)
+Static analysis only (no runtime/execution environment testing)
+Business-logic specific (technical vulnerabilities handled by base Slither)
+Known Constraints:
+Does not detect reentrancy (use slither --detect reentrancy)
+Does not analyze upgradeable proxy patterns separately
+Limited to Ethereum Virtual Machine (EVM) bytecode patterns
+Future Extensions:
+[ ] Dynamic analysis hybrid (Mythril integration)
+[ ] Machine learning for novel pattern recognition
+[ ] Real-time blockchain monitoring daemon
+[ ] Multi-chain support (Binance Smart Chain, Polygon)
+👨‍💻 Author & Attribution
 Ermand Mani
-BEng (Hons) Cyber Security
-University of the West of Scotland
-Student ID: B00228789
-Supervisor: [Redacted for Review]
-Submission Date: 2026
-🎓 Academic Context
-This repository contains artifacts from an undergraduate honours dissertation investigating Automated Detection of Fraudulent Smart Contracts Using Static Analysis Techniques.
-Research Questions:
-Can business-logic vulnerabilities be reliably detected via AST analysis?
-What is the precision/recall trade-off for behavioral vs. technical vulnerability detection?
-How effectively can static analysis prevent DeFi fraud pre-deployment?
-Methodology: Design Science Research (DSR) with empirical evaluation.
-📄 License & Citation
-License: Academic Use Only (See LICENSE)
-BibTeX:
-bibtex
-Copy
-@software{smartguard2026,
-  author = {Mani, Ermand},
-  title = {SmartGuard: Static Analysis for DeFi Fraud Detection},
-  year = {2026},
-  institution = {University of the West of Scotland},
-  type = {Undergraduate Dissertation Project}
-}
+Undergraduate Researcher | Cyber Security Engineer
+University of the West of Scotland | Student ID: B00228789
+Supervision: [Academic Supervisor Name Redacted for Review]
+Repository: github.com/CodeEvent/SmartGuard
 <div align="center">
-⬆ Back to Top
-Built with precision. Verified with rigor. Defending DeFi.
+View Demo · Read Dissertation · Report Bug
+Defending DeFi through Static Analysis Precision
 </div>
