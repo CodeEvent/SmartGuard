@@ -4,7 +4,7 @@
 
 ### Static Analysis for DeFi Fraud Detection
 
-*Extends Slither with three custom detectors targeting the business-logic vulnerabilities that drain wallets — unlimited minting, token impersonation, and unprotected admin functions.*
+*Extends Slither with three custom detectors targeting the business-logic vulnerabilities that drain wallets - unlimited minting, token impersonation, and unprotected admin functions.*
 
 [![Python](https://img.shields.io/badge/Python-3.10.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Slither](https://img.shields.io/badge/Slither-0.11.5-7B2D8B?style=for-the-badge)](https://github.com/crytic/slither)
@@ -25,7 +25,7 @@ Standard Slither finds reentrancy, integer overflow, and unchecked calls. It fin
 
 | Detector | Flag | Severity | Catches |
 |:---------|:-----|:--------:|:--------|
-| **UnlimitedMint** | `unlimited-mint` | 🔴 HIGH | Public/external mint functions with no supply cap — the mechanism behind most token inflation fraud |
+| **UnlimitedMint** | `unlimited-mint` | 🔴 HIGH | Public/external mint functions with no supply cap - the mechanism behind most token inflation fraud |
 | **FakeTokenName** | `fake-token-name` | 🟡 MEDIUM | Contracts impersonating ETH, USDT, BTC, WBTC, BNB, USDC or WETH by hardcoding their names |
 | **UnprotectedCriticalFunction** | `unprotected-critical-function` | 🔴 HIGH | `setOwner`, `withdraw`, `transferOwnership`, `selfdestruct` and similar functions callable by anyone |
 
@@ -53,7 +53,7 @@ slither --version   # 0.11.5
 slither --list-detectors | Select-String "unlimited-mint|fake-token-name|unprotected-critical-function"
 ```
 
-You should see three lines back. If not — `pip uninstall smartguard -y && pip install -e .`
+You should see three lines back. If not - `pip uninstall smartguard -y && pip install -e .`
 
 ---
 
@@ -63,23 +63,23 @@ You should see three lines back. If not — `pip uninstall smartguard -y && pip 
 .\demo.ps1
 ```
 
-The demo runs four stages against `stratos_unlimited.sol` — a Solidity reconstruction of the Stratos Chain contract that received HIGH-risk findings in BlockSec's professional audit:
+The demo runs four stages against `stratos_unlimited.sol` - a Solidity reconstruction of the Stratos Chain contract that received HIGH-risk findings in BlockSec's professional audit:
 
 ```
 ════════════════════════════════════════════════
- STAGE 1 — Plugin Registration
+ STAGE 1 - Plugin Registration
 ════════════════════════════════════════════════
   ✅ unlimited-mint                  registered
   ✅ fake-token-name                 registered
   ✅ unprotected-critical-function   registered
 
 ════════════════════════════════════════════════
- STAGE 2 — Baseline Slither (no SmartGuard)
+ STAGE 2 - Baseline Slither (no SmartGuard)
 ════════════════════════════════════════════════
   stratos_unlimited.sol → 0 business-logic findings
 
 ════════════════════════════════════════════════
- STAGE 3 — SmartGuard Detection
+ STAGE 3 - SmartGuard Detection
 ════════════════════════════════════════════════
   [HIGH]    unlimited-mint               addReward()      line 28
   [HIGH]    unprotected-critical-function  withdrawReward() line 35
@@ -88,7 +88,7 @@ The demo runs four stages against `stratos_unlimited.sol` — a Solidity reconst
   3 findings. 0 missed. Matches BlockSec STRATOS-2024-001. ✅
 
 ════════════════════════════════════════════════
- STAGE 4 — False Positive Check (OpenZeppelin ERC20)
+ STAGE 4 - False Positive Check (OpenZeppelin ERC20)
 ════════════════════════════════════════════════
   ERC20.sol → 0 findings ✅
 ```
@@ -97,7 +97,7 @@ The demo runs four stages against `stratos_unlimited.sol` — a Solidity reconst
 
 ## 🔬 How the Detectors Work
 
-Each detector runs a multi-stage filtering pipeline against Slither's AST — not raw source text.
+Each detector runs a multi-stage filtering pipeline against Slither's AST - not raw source text.
 
 ```
 Contract AST
@@ -145,14 +145,14 @@ Tested against **17 contracts**: 7 confirmed fraudulent (3 synthetic, 1 Stratos 
 | True Positives | **25** | 0 |
 | False Positives | **0** | 0 |
 | True Negatives | **10** | 10 |
-| False Negatives | **0** | — |
+| False Negatives | **0** | - |
 | Precision | **100%** | N/A |
 | Recall | **100%** | N/A |
 | F1-Score | **100%** | N/A |
 
 </div>
 
-> **Audit Correlation** — SmartGuard's findings on `stratos_unlimited.sol` match 100% of the HIGH-risk vulnerabilities identified in BlockSec professional audit report STRATOS-2024-001, at zero cost and in sub-second execution time.
+> **Audit Correlation** - SmartGuard's findings on `stratos_unlimited.sol` match 100% of the HIGH-risk vulnerabilities identified in BlockSec professional audit report STRATOS-2024-001, at zero cost and in sub-second execution time.
 
 ---
 
@@ -162,9 +162,9 @@ Tested against **17 contracts**: 7 confirmed fraudulent (3 synthetic, 1 Stratos 
 SmartGuard/
 ├── contracts/
 │   ├── scam/                          # 7 fraudulent contracts
-│   │   ├── test_mint.sol              # synthetic — unlimited mint
-│   │   ├── scam_fake_eth.sol          # synthetic — token impersonation
-│   │   ├── vulnerable_owner.sol       # synthetic — unprotected functions
+│   │   ├── test_mint.sol              # synthetic - unlimited mint
+│   │   ├── scam_fake_eth.sol          # synthetic - token impersonation
+│   │   ├── vulnerable_owner.sol       # synthetic - unprotected functions
 │   │   └── external/
 │   │       ├── stratos_unlimited.sol  # Stratos Chain reconstruction
 │   │       └── rugdoc/
@@ -173,7 +173,7 @@ SmartGuard/
 │   │           └── patrick_finance_rug.sol
 │   └── legit/                         # 10 legitimate contracts
 │       ├── test.sol                   # Phase 1 development artefact
-│       └── openzeppelin/              # OZ v5.2.0 — ERC20, Ownable, Pausable,
+│       └── openzeppelin/              # OZ v5.2.0 - ERC20, Ownable, Pausable,
 │                                      # ERC721, Math, AccessControl, Address,
 │                                      # Context, ReentrancyGuard, SafeERC20
 ├── detectors/
@@ -199,7 +199,7 @@ SmartGuard/
 mkdir results\baseline, results\extended, results\json -Force
 $detect = "unlimited-mint,fake-token-name,unprotected-critical-function"
 
-# All 7 scam contracts — baseline
+# All 7 scam contracts - baseline
 slither contracts\scam\test_mint.sol 2>&1 | Out-File results\baseline\test_mint.txt
 slither contracts\scam\scam_fake_eth.sol 2>&1 | Out-File results\baseline\scam_fake_eth.txt
 slither contracts\scam\vulnerable_owner.sol 2>&1 | Out-File results\baseline\vulnerable_owner.txt
@@ -208,7 +208,7 @@ slither contracts\scam\external\rugdoc\beetsfarm_rug.sol 2>&1 | Out-File results
 slither contracts\scam\external\rugdoc\evo_honeypot.sol 2>&1 | Out-File results\baseline\evo_honeypot.txt
 slither contracts\scam\external\rugdoc\patrick_finance_rug.sol 2>&1 | Out-File results\baseline\patrick_finance_rug.txt
 
-# All 10 legit contracts — baseline
+# All 10 legit contracts - baseline
 @("ERC20","Ownable","Pausable","ERC721","Math","AccessControl","Address","Context","ReentrancyGuard","SafeERC20") | ForEach-Object {
     slither "contracts\legit\openzeppelin\$_.sol" 2>&1 | Out-File "results\baseline\$_.txt"
 }
@@ -235,7 +235,7 @@ slither contracts\scam\external\rugdoc\patrick_finance_rug.sol --detect $detect 
 ### Full dataset in one shot
 
 ```powershell
-"SmartGuard Evaluation — $(Get-Date)" | Out-File results\comprehensive_results.txt
+"SmartGuard Evaluation - $(Get-Date)" | Out-File results\comprehensive_results.txt
 "=" * 60 | Out-File results\comprehensive_results.txt -Append
 
 foreach ($dir in @("scam","legit")) {
@@ -273,7 +273,7 @@ slither --list-detectors | Select-String "unlimited-mint"
 <details>
 <summary><strong>OZ contracts fail to compile (missing imports)</strong></summary>
 
-Some OZ contracts import siblings that Slither cannot resolve when run individually. This is expected and does not affect the true negative result — `Context.sol` and `ReentrancyGuard.sol` compile cleanly in all cases.
+Some OZ contracts import siblings that Slither cannot resolve when run individually. This is expected and does not affect the true negative result - `Context.sol` and `ReentrancyGuard.sol` compile cleanly in all cases.
 </details>
 
 <details>
@@ -300,14 +300,14 @@ solc --version
 
 ## 🏗 Built On
 
-- [**Slither**](https://github.com/crytic/slither) by Trail of Bits — the static analysis foundation
-- [**OpenZeppelin Contracts v5.2.0**](https://github.com/OpenZeppelin/openzeppelin-contracts) — legitimate contract evaluation set
-- [**solc-select**](https://github.com/crytic/solc-select) — compiler version pinning
+- [**Slither**](https://github.com/crytic/slither) by Trail of Bits - the static analysis foundation
+- [**OpenZeppelin Contracts v5.2.0**](https://github.com/OpenZeppelin/openzeppelin-contracts) - legitimate contract evaluation set
+- [**solc-select**](https://github.com/crytic/solc-select) - compiler version pinning
 
 ---
 
 <div align="center">
 
-*BEng (Hons) Cyber Security dissertation — University of the West of Scotland*
+*BEng (Hons) Cyber Security dissertation - University of the West of Scotland*
 
 </div>
