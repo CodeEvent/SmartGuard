@@ -423,5 +423,4 @@ Contact: support_SmartGuard@proton.me
 
 *BEng (Hons) Cyber Security dissertation - University of the West of Scotland*
 </div>
----
 
