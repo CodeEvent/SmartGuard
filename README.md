@@ -398,8 +398,32 @@ solc --version
 
 ---
 
+## 🏗 Built On
+
 <div align="center">
 
 *BEng (Hons) Cyber Security dissertation — University of the West of Scotland*
+
+---
+
+## 📄 License
+
+Dual Licensed: AGPL-3.0 (Open Source) + Commercial
+
+Open Source (AGPL-3.0)
+Free for personal, educational, and non-commercial use
+Requires sharing modifications when distributed or used as network service
+Full source code transparency
+
+Commercial License
+Required for business use
+
+## 📞 Support
+Contact: support_SmartGuard@proton.me
+
+---
+
+
+
 
 </div>
