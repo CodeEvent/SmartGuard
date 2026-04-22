@@ -406,7 +406,8 @@ If this project helps your security work, consider giving it a ⭐
 
 ⭐ Star · 🍴 Fork · 💬 Discuss · 📝 Contribute
 
-Community project by @mukul975. Not affiliated with Anthropic PBC.
+Community project by @CodeEvent. 
+Not affiliated with Slither.
 
 ---
 
